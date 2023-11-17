@@ -1,0 +1,17 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "Do you ever feel overwhelmed by too many options and you just don't know which one to choose? The Make A Choice application will help you break down your decisions into smaller pieces so you can be confident in your choice. As you compare options one by one, your smaller selections will eventually lead you to be confident in what you have deemed the best choice of all.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "git-filter-repo": "^0.0.30",
+    "mongodb": "^6.3.0"
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decide</title>
+    <link rel="icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="play.css" />
+
+    <!-- Include bootstrap CSS framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Make A Choice</h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <h5 id="name"></h5>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Decide</a></li>
+          <li><a href="scores.html">Results</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <div>
+      <p>What are you trying to decide? </p>
+      <form method="get" action="javascript:submit()">
+        <input type="text" id="count" placeholder="enter decision topic" style="color:black" />
+        <button onclick="submit()">Submit</button>
+      </form>
+      <div id="questionDisplay"></div>
+      </div>
+
+
+      <!-- More formatting with old style HTML -->
+      <br />
+
+      <div>
+      <form method="get" action="option2">
+        <label for="count">option 1:</label>
+        <input type="text" id="opt1" placeholder="enter option" style="color:black" />
+      </form>
+      </div>
+      <div>
+      <form method="get" action="option3">
+        <label for="count">option 2:</label>
+        <input type="text" id="opt2" placeholder="enter option" style="color:black" />
+      </form>
+      </div>
+      <div>
+        <label for="count">option 3:</label>
+        <input type="text" id="opt3" placeholder="enter option" style="color:black" />
+      </div>
+      <div>
+        <label for="count">option 4:</label>
+        <input type="text" id="opt4" placeholder="enter option" style="color:black" />
+      </div>
+      <div>
+        <label for="count">option 5:</label>
+        <input type="text" id="opt5" placeholder="enter option" style="color:black" />
+      </div>
+
+      <br />
+
+      <div>
+        <button> Reset</button> <button> <a href="process.html">Start</a></button>
+      </div>
+
+      <br />
+
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Haylie Jarvis</span>
+      <br />
+      <a href="https://github.com/hayliej/startup.git">GitHub</a>
+    </footer>
+
+    <script src="play.js"></script>
+    <script>displayName()</script>  
+  </body>
+</html>

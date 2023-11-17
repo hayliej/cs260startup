@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+  }
+  
+  header {
+    flex: 0 80px;
+    background: rgb(236, 236, 252);
+    font-color: white;
+  }
+  
+  main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(236, 236, 252);
+  }
+  
+  footer {
+    flex: 0 30px;
+    background: rgb(216, 216, 250);
+    border-top: none;
+  }
+  
+  menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+  }
+  
+  .navbar-brand {
+    padding-left: 0.3em;
+    border-bottom: solid rgb(182, 182, 182) thin;
+  }
+  
+  menu .nav-item {
+    padding: 0 0.3em;
+  }
+  
+  footer a {
+    float: right;
+  }
+  
+  @media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  
+  li {
+    padding: 0 0.5em;
+  }
+
+  td,
+tr {
+  color: black;
+  text-align: center;
+  border: white solid thi;
+  padding: 1em;
+}
+
+#table-data {
+  background-color: rgb(216, 216, 250);
+  width: 300px;
+}
