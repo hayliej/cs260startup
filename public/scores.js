@@ -9,9 +9,13 @@ function win() {
 }
 
 async function getResults() {
-    const response = await fetch('/api/results', {
+  // let results = [];
+    const response = await fetch('/api/resultsList', {
     method: 'GET'});
   results = await response.json()
+
+  // Save the scores in case we go offline in the future
+  //localStorage.setItem('results', JSON.stringify(results));
 
   for (let i = 0; i<results.length; i++){
     row = table.insertRow(0);
@@ -29,9 +33,11 @@ function displayName() {
     const nameEl = document.querySelector("#name");
     const storedName = localStorage.getItem("userName");
     if (storedName) {
-      nameEl.textContent = storedName; //don't think this is working, not sure why yet
+      nameEl.textContent = storedName;
     } else {
       nameEl.textContent = "Login";
     }
   }
   window.onload = displayName;
+
+getResults();

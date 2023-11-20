@@ -17,6 +17,8 @@ const resultCollection = db.collection('result');
 
 async function addResult(score) {
   const result = await resultCollection.insertOne(score);
+  console.log("addResult " + score);
+  console.log(score);
   return result;
 }
 
@@ -27,6 +29,7 @@ function getResults() {
     limit: 10,
   };
   const cursor = resultCollection.find(options);
+  console.log(options);
   return cursor.toArray();
 }
 

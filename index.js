@@ -16,20 +16,25 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetResults
-apiRouter.get('/results', async (_req, res) => {
+apiRouter.get('/resultsList', async (_req, res) => {
   const results = await DB.getResults();
-  res.send(results);
+  res.send(resultsList);
+  console.log("get")
 });
 
 // SubmitResult
 apiRouter.post('/result', async (req, res) => {
+  console.log("post")
+  console.log(req.body);
   DB.addResult(req.body);
   const results = await DB.getResults();
+  console.log(results);
   res.send(results);
-  //results.push(req.body);
+  resultsList.push(req.body);
+  console.log("post")
 });
 
-//results = [];
+resultsList = [];
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
