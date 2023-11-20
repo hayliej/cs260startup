@@ -62,3 +62,8 @@ For this deliverable I added backend endpoints that receive votes and then retur
 + **Calls to third party endpoints -** done, puts a quotation from an API on the about page
 + **Backend service endpoints -** Placeholder for login that stores the current user on the server. Endpoints for decision results.
 + **Frontend calls service endpoints -** I did this using the fetch function
+
+## DB Deliverable
++ **MongoDB Atlas database created -** done
++ **Endpoints for data -** endpoints process data and send it to MongoDB
++ **Stores data in MongoDB -** done
