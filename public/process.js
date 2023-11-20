@@ -64,4 +64,15 @@ function displayName() {
   }
   const storedName = localStorage.getItem("userName");
   const question = localStorage.getItem('question')
+
+//   function displayQ() {
+//     const questionEl = document.querySelector("#questionDis");
+//     const storedQuestion = localStorage.getItem("question");
+//     if (storedQuestion) {
+//       questionEl.textContent = storedQuestion;
+//     } else {
+//       questionEl.textContent = "no question";
+//     }
+//   }
+//   window.onload = displayQ;
   window.onload = displayName;
