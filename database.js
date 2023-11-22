@@ -49,19 +49,23 @@ async function addResult(score) {
 
 function getResults() {
   //const query = { score: { $gt: 0, $lt: 900 } };
-  const options = {
-    //sort: { score: -1 },
-    limit: 10,
-  };
-  const cursor = resultCollection.find(options);
-  console.log(options);
+  // const options = {
+  //   //sort: { score: -1 },
+  //   limit: 10,
+  // };
+  const cursor = resultCollection.find({});
   return cursor.toArray();
+}
+
+function findCopy(question, winner, name) {
+  return userCollection.findOne({question:question, winner:winner, name:name});
 }
 
 module.exports = { 
   getUser,
   getUserByToken,
   createUser,
+  findCopy,
   addResult, 
   getResults 
 };

@@ -13,7 +13,7 @@ async function getResults() {
     const response = await fetch('/api/resultsList', {
     method: 'GET'});
   results = await response.json()
-
+  console.log(results);
   // Save the scores in case we go offline in the future
   //localStorage.setItem('results', JSON.stringify(results));
 
@@ -40,4 +40,3 @@ function displayName() {
   }
   window.onload = displayName;
 
-getResults();

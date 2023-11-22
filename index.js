@@ -89,20 +89,23 @@ secureApiRouter.use(async (req, res, next) => {
 // GetResults
 apiRouter.get('/resultsList', async (_req, res) => {
   const results = await DB.getResults();
-  res.send(resultsList);
-  console.log("get")
+  console.log(results);
+  res.send(results);
 });
 
 // SubmitResult
 apiRouter.post('/result', async (req, res) => {
-  console.log("post")
-  console.log(req.body);
+  dbfind = await DB.findCopy(req.body.question, req.body.winner, req.body.name);
+  console.log("dbfind:")
+  console.log(dbfind);
+  if (!(dbfind===null)) {
+    console.log("found");
+    return;
+  }
   DB.addResult(req.body);
   const results = await DB.getResults();
-  console.log(results);
   res.send(results);
   resultsList.push(req.body);
-  console.log("post")
 });
 
 resultsList = [];
