@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.ico" />
     
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="login.css" />
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -17,7 +18,6 @@
       crossorigin="anonymous"
     />
   </head>
-  <script src="login.js"></script>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
@@ -41,11 +41,40 @@
     <main>
       <h1 style="color:rgb(3, 3, 3)">Welcome</h1>
       <p>Login to choose</p>
-      <form method="get" >
-        <label for="name">Name</label>
-        <input type="text" id="namthing" placeholder="Your name here" />
-        <button class="btn btn-primary" type="button" onclick = login()>Login</button>
-      </form>
+      <!-- Displayed when needing authentication -->
+      <div id="loginControls" style="display: none">
+        <div class="input-group mb-3">
+          <span class="input-group-text">@</span>
+          <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">🔒</span>
+          <input class="form-control" type="password" id="userPassword" placeholder="password" />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+        <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+      </div>
+      <!-- Displayed when ready to play -->
+      <div id="playControls" style="display: none">
+        <div id="playerName"></div>
+        <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+        <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+ <!-- Error dialog -->
+ <div class="modal fade" id="msgModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-body">error message here</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
     </main>
 
     <footer>
@@ -57,5 +86,5 @@
 
     
   </body>
-  <script>displayName()</script>
+  <script src="login.js"></script>
 </html>
