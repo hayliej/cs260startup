@@ -65,14 +65,15 @@ function displayName() {
   const storedName = localStorage.getItem("userName");
   const question = localStorage.getItem('question')
 
-//   function displayQ() {
-//     const questionEl = document.querySelector("#questionDis");
-//     const storedQuestion = localStorage.getItem("question");
-//     if (storedQuestion) {
-//       questionEl.textContent = storedQuestion;
-//     } else {
-//       questionEl.textContent = "no question";
-//     }
-//   }
-//   window.onload = displayQ;
-  window.onload = displayName;
+function displayQ() {
+  const questionEl = document.getElementById("questionDis");
+  const storedQuestion = localStorage.getItem("question");
+  console.log(questionEl)
+  if (storedQuestion) {
+    questionEl.textContent = storedQuestion;
+  } else {
+    questionEl.textContent = "no question";
+  }
+}
+displayQ();
+window.onload = displayName;
