@@ -67,3 +67,10 @@ For this deliverable I added backend endpoints that receive votes and then retur
 + **MongoDB Atlas database created -** done
 + **Endpoints for data -** endpoints process data and send it to MongoDB
 + **Stores data in MongoDB -** done
+
+## Login Deliverable
+For this deliverable I associate the choices with the logged in user.
++ **User registration -** creates a new account in the database
++ **Existing user -** stores the votes under the same user if the user already exists
++ **Use MongoDB to store credentials -** stores both user and their votes
++ **Restricts functionality -** You cannot see full results list until you have logged in.
