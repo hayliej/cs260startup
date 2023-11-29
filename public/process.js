@@ -1,3 +1,5 @@
+
+
 function options(optiona, optionb){
     lbutton=document.getElementById("leftButton");
     rbutton=document.getElementById("rightButton");
@@ -51,8 +53,43 @@ async function f (win){
     method: 'POST',
     headers: {'content-type': 'application/json'},
     body: JSON.stringify(jsonthing),
-  });}
+  });
+  // Let other players know the game has concluded
+  this.broadcastEvent(userName, "decision made", jsonthing);
+}
 
+    // Functionality for peer communication using WebSocket
+
+    function configureWebSocket() {
+      
+      socket.onopen = (event) => {
+        broadcastEvent(storedName);
+        console.log("socket open");
+      };
+      socket.onclose = (event) => {
+      };
+      socket.onmessage = async (event) => {
+        const msg = JSON.parse(await event.data.text());
+        username = msg?.user;
+        message = document.getElementById("message");
+        message.innerHTML=username + " joined";
+      };
+   
+    return socket
+    }
+
+  function broadcastEvent(user) {
+      const event = {
+        user: user
+      };
+      socket.send(JSON.stringify(event));
+    }
+
+  function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
 
 function displayName() {
     const nameEl = document.querySelector("#name");
@@ -75,5 +112,8 @@ function displayQ() {
     questionEl.textContent = "no question";
   }
 }
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+configureWebSocket();
 displayQ();
 window.onload = displayName;
