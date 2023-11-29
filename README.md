@@ -74,3 +74,9 @@ For this deliverable I associate the choices with the logged in user.
 + **Existing user -** stores the votes under the same user if the user already exists
 + **Use MongoDB to store credentials -** stores both user and their votes
 + **Restricts functionality -** You cannot see full results list until you have logged in.
+
+## WebSocket deliverable
++ **Backend listens for WebSocket connection -** done
++ **Frontend makes WebSocket connection -** done
++ **Data sent over WebSocket connection -** done
++ **WebSocket data displayed in the application interface -** shows users when other users have joined the website
