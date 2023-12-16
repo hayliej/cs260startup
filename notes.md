@@ -279,3 +279,12 @@ pending - Currently running asynchronously
 fulfilled - Completed successfully
 rejected - Failed to complete
 
+
+# EXAM 2 study guide:
++ **1 - What ports are used for HTTP, HTTPS, SSH?** 
++ HTTP  80
++ HTTPS  443
++ SSH  22
++ **2 - What do HTTP status codes in the 300, 400, 500 range indicate?**
+
+
