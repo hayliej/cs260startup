@@ -25,9 +25,90 @@ now with backend:
 + HTTPS  443
 + SSH  22
 + **2 - What do HTTP status codes in the 300, 400, 500 range indicate?**
++ 300 redirection messages (not error)
++ 400 client error
++ 500 server error
++ **3 - What does the HTTP header content-type allows you to do?**
++ What type of content we’re dealing with like JSON, html plain text, etc
++ Specify content type you’re sending over http(?)
++ **4 - What do the following attributes of a cookie do?**
++ Domain: matches domain
++ Path: path cookie generated on
++ SameSite: only return cookie to domain it’s generated with, so like if it’s on google only google has access to that cookie 
++ HTTPOnly: tells javascript to not run on browser so it can read the cookie (let’s ppl get to the website before any js runs/anything really happens)
++ **5 - Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?**
++ Determine which functions are called in what order (?)
++ Runs code associated with that path
++ Look for path, method, and does path contain something defined earlier on in the file?
++ Look for the console.logs, execute from top to bottom
++ **6 - Given the following Express service code: What does the following JavaScript fetch return?**
++ Similar to 5^
++ Fetch returns results of communication to server (could be status code or actual data)
++ Front end function that returns information about call to the server
++ **7 - Given the following MongoDB query { cost: { $gt: 10 }, name: /fran.*/} select all of the matching documents.**
++ All documents with $gt = cost  greater than 10 & the name has fran with anything after it ( .=any character, *=any number of that character)
++ Returns an array of matches
++ **8 - How should you store user passwords in a database?**
++ Hashed and salted
++ **9 - Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?**
++ What backend will do on connect, disconnect/close, & on message
++ Know what happens with ^ these 3
++ When somebody connects, it can do things like give it a unique id, tell backend there’s a connection, etc.
++ For sending message, get that console.log printed out
++ When client closes connection and have console.log it’ll say connection closed or something like that
++ **10 - What is the WebSocket protocol used for?**
++ Instantaneous Client to server connection where either client or server can initiate contact
++ **11 - What is JSX and how are the curly braces rendered?**
++ JSX = javascript and html together
++ Only thing displayed to the screen is what’s after the keyword “return”
++ Curly braces run function and then whatever is from that function is displayed (if it’s after return)
++ **12 - Assuming a HTML document with a <div id="root"></div>
+element, what content will the following React component generate?
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);**
++ It will print:
++ Welcome Sara
++ Welcome Cahal
++ Welcome Edite
++ **13 - Assuming a HTML document with a <div id="root"></div>
+element, what content will the following React component generate?
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);**
++ It will list numbers 1 2 3 4 5 
++ It goes in the order but in unordered list (ul) type meaning with bullet points because it’s mapped
++ Ordered (ol) would have numbers instead of bullet points
++ **14 - **
++ 
++ **15 - **
++ **16 - **
++ **17 - **
++ **18 - **
++ **19 - **
++ **20 - **
++ **21 - **
++ **22 - **
++ **23 - **
 
-
-
+  
 # EXAM 1 study guide:
 In the following code, what does the link element do?
 Links to another webpage/file
