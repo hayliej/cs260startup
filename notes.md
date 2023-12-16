@@ -19,6 +19,14 @@ will deploy the indicated files (in this case simon) to the website with that in
 now with backend:
 /Users/hayliejarvis/CS260/startup/simon-javascript/simon-service/deployService.sh -k ~/CS260/cs206pt2.pem -h hayliejarvis.com -s simon
 
+# EXAM 2 study guide:
++ **1 - What ports are used for HTTP, HTTPS, SSH?** 
++ HTTP  80
++ HTTPS  443
++ SSH  22
++ **2 - What do HTTP status codes in the 300, 400, 500 range indicate?**
+
+
 
 # EXAM 1 study guide:
 In the following code, what does the link element do?
@@ -278,13 +286,3 @@ What will the following code using Promises output when executed?
 pending - Currently running asynchronously
 fulfilled - Completed successfully
 rejected - Failed to complete
-
-
-# EXAM 2 study guide:
-+ **1 - What ports are used for HTTP, HTTPS, SSH?** 
-+ HTTP  80
-+ HTTPS  443
-+ SSH  22
-+ **2 - What do HTTP status codes in the 300, 400, 500 range indicate?**
-
-
