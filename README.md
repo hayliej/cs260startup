@@ -80,3 +80,9 @@ For this deliverable I associate the choices with the logged in user.
 + **Frontend makes WebSocket connection -** done
 + **Data sent over WebSocket connection -** done
 + **WebSocket data displayed in the application interface -** shows users when other users have joined the website
+
+## React deliverable
++ **Bundled and transpiled -** done
++ **Components -** Login, decide, results, about are all components.
++ **Router -** Routing between login and other components
++ **Hooks -** Login uses UseState to track if user is logged in or not.
