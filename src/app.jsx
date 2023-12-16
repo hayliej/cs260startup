@@ -3,8 +3,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 // import { Play } from './play/play';
 // import { Scores } from './scores/scores';
-// import { About } from './about/about';
-//import { AuthState } from './login/authState';
+import { About } from './about/about';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
@@ -19,27 +18,31 @@ export default function App() {
             Make A Choice<sup>&reg;</sup>
           </div>
           <menu className='navbar-nav'>
-            <li className='nav-item'>
-              <a className='nav-link' href='index.html'>
-                Home
-              </a>
-            </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='play.html'>
-                Decide
-              </a>
-            </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='scores.html'>
-                Results
-              </a>
-            </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='about.html'>
-                About
-              </a>
-            </li>
-          </menu>
+              {/* <li className='nav-item'>
+                <NavLink className='nav-link' to=''>
+                  Login
+                </NavLink>
+              </li> */}
+              {/* {authState === AuthState.Authenticated && (
+                <li className='nav-item'>
+                  <NavLink className='nav-link' to='play'>
+                    Play
+                  </NavLink>
+                </li>
+              )} */}
+              {/* {authState === AuthState.Authenticated && (
+                <li className='nav-item'>
+                  <NavLink className='nav-link' to='scores'>
+                    Scores
+                  </NavLink>
+                </li>
+              )} */}
+              <li className='nav-item'>
+                <NavLink className='nav-link' to='about'>
+                  About
+                </NavLink>
+              </li>
+            </menu>
         </nav>
       </header>
 
@@ -58,9 +61,9 @@ export default function App() {
             }
             exact
           />
-          {/* <Route path='/play' element={<Play userName={userName} />} />
-          <Route path='/scores' element={<Scores />} />
-          <Route path='/about' element={<About />} /> */}
+          {/* <Route path='/play' element={<Play userName={userName} />} /> */}
+          {/* <Route path='/scores' element={<Scores />} /> */}
+          <Route path='/about' element={<About />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 
