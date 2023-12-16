@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 // import { Play } from './play/play';
-// import { Scores } from './scores/scores';
+import { Scores } from './scores/scores';
 import { About } from './about/about';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -23,20 +23,16 @@ export default function App() {
                   Login
                 </NavLink>
               </li> */}
-              {/* {authState === AuthState.Authenticated && (
-                <li className='nav-item'>
+                {/* <li className='nav-item'>
                   <NavLink className='nav-link' to='play'>
                     Play
                   </NavLink>
-                </li>
-              )} */}
-              {/* {authState === AuthState.Authenticated && (
+                </li> */}
                 <li className='nav-item'>
                   <NavLink className='nav-link' to='scores'>
                     Scores
                   </NavLink>
                 </li>
-              )} */}
               <li className='nav-item'>
                 <NavLink className='nav-link' to='about'>
                   About
@@ -62,7 +58,7 @@ export default function App() {
             exact
           />
           {/* <Route path='/play' element={<Play userName={userName} />} /> */}
-          {/* <Route path='/scores' element={<Scores />} /> */}
+          <Route path='/scores' element={<Scores />} />
           <Route path='/about' element={<About />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
