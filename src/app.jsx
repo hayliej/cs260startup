@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
-// import { Play } from './play/play';
+import { Play } from './play/play';
 import { Scores } from './scores/scores';
 import { About } from './about/about';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,16 +18,16 @@ export default function App() {
             Make A Choice<sup>&reg;</sup>
           </div>
           <menu className='navbar-nav'>
-              {/* <li className='nav-item'>
+              <li className='nav-item'>
                 <NavLink className='nav-link' to=''>
                   Login
                 </NavLink>
-              </li> */}
-                {/* <li className='nav-item'>
+              </li>
+                <li className='nav-item'>
                   <NavLink className='nav-link' to='play'>
                     Play
                   </NavLink>
-                </li> */}
+                </li>
                 <li className='nav-item'>
                   <NavLink className='nav-link' to='scores'>
                     Scores
@@ -57,7 +57,7 @@ export default function App() {
             }
             exact
           />
-          {/* <Route path='/play' element={<Play userName={userName} />} /> */}
+          <Route path='/play' element={<Play userName={userName} />} />
           <Route path='/scores' element={<Scores />} />
           <Route path='/about' element={<About />} />
           <Route path='*' element={<NotFound />} />
