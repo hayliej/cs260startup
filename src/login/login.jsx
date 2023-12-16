@@ -1,9 +1,42 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export function Login({userName}) {
     const [uName, setUName] = useState(userName);
-    
-      
+    const navigate = useNavigate();
+    const loggedIn = (
+        <div id="playControls">
+          <div id="playerName"></div>
+          <button type="button" className="btn btn-primary" onClick={play}>Play</button>
+          <button type="button" className="btn btn-secondary" onClick={logout}>Logout</button>
+        </div>
+      )
+    const loggedOut = (
+        <div id="loginControls">
+        <div className="input-group mb-3">
+          <span className="input-group-text">@</span>
+          <input className="form-control" type="text" id="userName" placeholder="your@email.com" text={uName}>
+            </input>
+        </div>
+        <div className="input-group mb-3">
+          <span className="input-group-text">🔒</span>
+          <input className="form-control" type="password" id="userPassword" placeholder="password" />
+        </div>
+        <button type="button" className="btn btn-primary" onClick={loginUser}>Login</button>
+        <button type="button" className="btn btn-primary" onClick={createUser}>Create</button>
+      </div>
+      )
+
+    function authorized(){
+        console.log("running")
+        if (uName){
+            return loggedIn;
+        } else {
+            return loggedOut;
+        }
+    }
+    const [youIn, setYouIn] = useState(authorized);
+
       async function loginUser() {
         loginOrCreate(`/api/auth/login`);
       }
@@ -41,9 +74,11 @@ export function Login({userName}) {
       
       function logout() {
         localStorage.removeItem('userName');
+        setUName(null);
+        setYouIn(loggedOut);
         fetch(`/api/auth/logout`, {
           method: 'delete',
-        }).then(() => (window.location.href = '/'));
+        }).then(() => navigate('/'));
       }
       
       async function getUser(email) {
@@ -65,9 +100,9 @@ export function Login({userName}) {
         }
       }
     return (
-    <main className='container-fluid bg-secondary text-center'>Main function
+    <main className='container-fluid bg-secondary text-center'>
       <p>Login to choose</p>
-      {!userName && (
+      {/* {!userName && (
         <div id="loginControls">
         <div className="input-group mb-3">
           <span className="input-group-text">@</span>
@@ -81,16 +116,16 @@ export function Login({userName}) {
         <button type="button" className="btn btn-primary" onClick={loginUser}>Login</button>
         <button type="button" className="btn btn-primary" onClick={createUser}>Create</button>
       </div>
-      )}
+      )} */}
 
-    {userName && (
+    {/* {userName && (
       <div id="playControls">
         <div id="playerName"></div>
         <button type="button" className="btn btn-primary" onClick={play}>Play</button>
         <button type="button" className="btn btn-secondary" onClick={logout}>Logout</button>
       </div>
-    )}
-     
+    )} */}
+    <div>{youIn}</div>
       <div className="modal fade" id="msgModal" tabIndex="-1">
   <div className="modal-dialog modal-dialog-centered">
     <div className="modal-content text-dark">
