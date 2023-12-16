@@ -96,17 +96,47 @@ element, what content will the following React component generate?
 + It will list numbers 1 2 3 4 5 
 + It goes in the order but in unordered list (ul) type meaning with bullet points because it’s mapped
 + Ordered (ol) would have numbers instead of bullet points
-+ **14 - **
-+ 
-+ **15 - **
-+ **16 - **
-+ **17 - **
-+ **18 - **
-+ **19 - **
-+ **20 - **
-+ **21 - **
-+ **22 - **
-+ **23 - **
++ **14 - What does the following React component do? function Example() {// Declare a new state variable, which we'll call "count" const [count, setCount] = useState(0);return (<div><p>You clicked {count} times</p><button onClick={() => setCount(count + 1)}>Click me</button></div>);**
++ Increase the count every time the button is clicked and print that number in the sentence
++ **15 - What are React Hooks used for?**
++ modify/handles state
++ Handles life cycle events of component (on create, on destroy)
++ **16 - What is the useEffect hook used for?**
++ When rendered it does what useEffect does
++ Watches life cycle events for component and runs based on (?) life cycle events
++ When variable is changed you can use useffect for that
++ Use useEffect hook when destroyed to do something with that
++ Updates the record
++ Essentially updates code when things change
++ **17 - What does this code do?
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}**
++ Creating browser router that allows you to navigate between components path tells you to go to correlated element
++ **18 - What role does npm play in web development?**
++ Manages node packages and allows you to download 3rd party stuff
++ **19 - What does package.json do in a npm project?**
++ Lists all packages you have
++ When deployed it can specify certain scripts like deployment scripts, what command to run your server
++ At top has name of project, script version, and what file to run project with. name and meta information about project
++ **20 - What does the fetch function do?**
++ See above
++ **21 - What does node.js do?**
++ Runs the server
++ **22 - What does Vite do?**
++ Allows you to bundle all your code together for production to deploy all react components
++ Transposes JSX into normal javascript to be run on a server
 
   
 # EXAM 1 study guide:
